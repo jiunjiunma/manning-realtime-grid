@@ -1,0 +1,26 @@
+{
+  "namespace": "com.jiunjiunma.manning.m1.avro",
+  "type": "record",
+  "name": "ChargingEvent",
+  "fields": [
+    {
+      "name": "uuid",
+      "type": ["string"]
+     },
+    {
+      "name": "charging",
+      "type": ["int", "null"],
+      "default": 0
+     },
+    {
+      "name": "charging_source",
+       "type": ["string", "null"],
+       "default": "utility"
+    },
+    {
+      "name": "current_capacity",
+       "type": ["int", "null"],
+       "default": 0
+    }
+  ]
+}
