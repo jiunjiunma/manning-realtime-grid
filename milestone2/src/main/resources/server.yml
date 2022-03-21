@@ -1,0 +1,23 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+# Logging settings.
+logging:
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+# app specific settings
+topic: "raw-topic"
+maxBodySize: 1024
+kafka:
+  bootstrap.servers: "localhost:29092"
+  schema.registry.url: "http://localhost:8090"
+
+s3:
+  bucket: "jiunjiunma.manning.realtime"
+  endpoint: "https://s3.us-east-1.amazonaws.com/"

@@ -1,0 +1,27 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+# Logging settings.
+logging:
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+# app specific settings
+source: "raw-topic"
+sink: "canonical-topic"
+dlq: "dead-letter-queue"
+kafka:
+  bootstrap.servers: "localhost:29092"
+  schema.registry.url: "http://localhost:8090"
+  application.id: "canonical-processor"
+  default.key.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+  default.value.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+
+s3:
+  bucket: "jiunjiunma.manning.realtime"
+  endpoint: "https://s3.us-east-1.amazonaws.com/"
