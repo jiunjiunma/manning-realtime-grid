@@ -42,35 +42,8 @@ public class FastLaneParser implements ValueMapper<RawRecord, Iterable<ParsedVal
 
     @Override
     public Iterable<ParsedValue> apply(RawRecord rawRecord) {
-        return () -> {
-            return computeNext(message(s3, rawRecord), rawRecord);
+        return () -> computeNext(message(s3, rawRecord), rawRecord);
 
-            /*
-            BufferedReader reader = new BufferedReader(new InputStreamReader(message(s3, rawRecord)));
-
-            return reader.lines()
-                .map(line -> {
-                    ParsedValue result = new ParsedValue(rawRecord);
-                    try {
-                        Instant start = Instant.now();
-                        Map<String, String> parsed = MAPPER.readValue(line, MAP_TYPE_REFERENCE);
-                        Instant end = Instant.now();
-                        Duration parseTime = Duration.between(start, end);
-                        if (parseTime.compareTo(maxParseTime) > 0) {
-                            // exceed max parse time
-                            result.slow();
-                        } else {
-                            result.parsed(parsed);
-                        }
-                    } catch (Exception e) {
-                        result.fail(e);
-                    }
-                    return result;
-                })
-                .iterator();
-
-             */
-        };
     }
 
     private Iterator<ParsedValue> computeNext(InputStream inputStream, RawRecord rawRecord) {
