@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 
-@Path("/status")
+@Path("/deviceStatus")
 @Produces(MediaType.APPLICATION_JSON)
 public class DeviceStatusEndpoint {
     private final String metaTable;
