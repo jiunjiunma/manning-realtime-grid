@@ -28,7 +28,7 @@ public class DeviceStatusEndpoint {
 
 
     @GET
-    @Path("{uuid}")
+    @Path("{uuid}/badMessageCount")
     public int badMessages(@PathParam("uuid") String uuid) {
         return statusDAO.badMessages(statusTable, uuid);
     }
@@ -42,6 +42,7 @@ public class DeviceStatusEndpoint {
     }
 
     @GET
+    @Path("deviceCount")
     public int numberOfConnectedDevices() {
         return metaDAO.numberOfDevices(metaTable);
     }
