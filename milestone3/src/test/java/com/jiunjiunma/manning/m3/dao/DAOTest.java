@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import java.util.Optional;
 
-public class StatusDAOTest {
+public class DAOTest {
     @ClassRule
     static public JdbiRule jdbiRule = JdbiRule.embeddedPostgres();
 
