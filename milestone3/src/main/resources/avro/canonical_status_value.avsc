@@ -1,0 +1,47 @@
+{
+  "namespace": "manning.devices.canonical.m3",
+  "type": "record",
+  "name": "CanonicalStatusValue",
+  "fields": [
+    {
+      "name": "uuid",
+      "type": "string"
+    },
+    {
+      "name": "source_topic",
+       "type": ["string", "null"],
+       "default": ""
+    },
+    {
+      "name": "source_partition",
+       "type": ["int", "null"],
+       "default": 0
+    },
+    {
+      "name": "source_offset",
+       "type": ["long","null"],
+       "default": 0
+    },
+    {
+      "name": "parse_start_epoch_ms",
+       "type": ["long", "null"],
+       "default" : 0
+    },
+    {
+      "name": "parse_end_epoch_ms",
+       "type": ["long", "null"],
+       "default" : 0
+    },
+    {
+      "name": "parse_duration_ms",
+       "type": [ "long", "null"],
+       "default" : 0
+    },
+    {
+      "name": "success",
+       "type": ["boolean", "null"],
+       "default" : false
+    }
+  ]
+}
+

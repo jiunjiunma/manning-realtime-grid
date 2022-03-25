@@ -13,6 +13,7 @@
   <modules>
     <module>milestone1</module>
     <module>milestone2</module>
+    <module>milestone3</module>
   </modules>
 
   <repositories>
@@ -28,13 +29,15 @@
   </repositories>
 
   <properties>
-    <maven.compiler.source>1.9</maven.compiler.source>
-    <maven.compiler.target>1.9</maven.compiler.target>
+    <maven.compiler.source>1.18</maven.compiler.source>
+    <maven.compiler.target>1.18</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
     <build.helper.plugin.version>3.0.0</build.helper.plugin.version>
+    <!--
     <scala-maven-plugin.version>4.3.1</scala-maven-plugin.version>
+    -->
 
     <dropwizard.version>1.3.23</dropwizard.version>
     <jdbi.version>2.55</jdbi.version>
@@ -43,7 +46,9 @@
     <confluent.version>5.5.2</confluent.version>
     <commons.io.version>2.5</commons.io.version>
     <aws.sdk.version>1.11.77</aws.sdk.version>
+    <!--
     <scala.compat.version>2.12</scala.compat.version>
+    -->
     <scala.version>2.12.6</scala.version>
     <spec2.version>4.2.0</spec2.version>
   </properties>
@@ -103,19 +108,6 @@
         </executions>
       </plugin>
       <!-- More scala support -->
-      <plugin>
-        <groupId>net.alchim31.maven</groupId>
-        <artifactId>scala-maven-plugin</artifactId>
-        <version>${scala-maven-plugin.version}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-              <goal>testCompile</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <!-- Avro support -->
       <!--
       <plugin>
@@ -253,11 +245,13 @@
       <artifactId>scala-library</artifactId>
       <version>${scala.version}</version>
     </dependency>
+    <!--
     <dependency>
       <groupId>org.apache.kafka</groupId>
       <artifactId>kafka-streams-scala_${scala.compat.version}</artifactId>
       <version>${kafka.version}</version>
     </dependency>
+    -->
 
     <!-- Databases drivers -->
     <!-- ****************** -->
@@ -281,12 +275,6 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.scalatest</groupId>
-      <artifactId>scalatest_${scala.compat.version}</artifactId>
-      <version>3.0.5</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.jdbi/jdbi3-testing -->

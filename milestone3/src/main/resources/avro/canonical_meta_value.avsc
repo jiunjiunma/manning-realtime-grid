@@ -1,0 +1,41 @@
+{
+  "namespace": "manning.devices.canonical.m3",
+  "type": "record",
+  "name": "CanonicalMetaValue",
+  "fields": [
+    {
+      "name": "uuid",
+      "type": "string"
+    },
+    {
+      "name": "source_topic",
+       "type": ["string", "null"],
+       "default": ""
+    },
+    {
+      "name": "source_partition",
+       "type": ["int", "null"],
+       "default": 0
+    },
+    {
+      "name": "source_offset",
+       "type": ["long","null"],
+       "default": 0
+    },
+    {
+      "name": "arrival_time_ms",
+       "type": ["long","null"],
+       "default": 0
+    },
+    {
+      "name": "meta_parse_time_epoch_ms",
+       "type": ["long", "null"],
+       "default": 0
+    },
+    {
+      "name": "num_events",
+       "type": ["long", "null"],
+       "default": 0
+    }
+  ]
+}
