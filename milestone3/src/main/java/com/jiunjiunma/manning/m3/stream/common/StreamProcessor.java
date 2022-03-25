@@ -35,7 +35,7 @@ public abstract class StreamProcessor<T extends StreamConfiguration> extends Env
         final KafkaStreams streams = new KafkaStreams(topology, kafkaProperties);
 
         // only use this for dev
-        // streams.cleanUp();
+        streams.cleanUp();
 
         // Now run the processing topology via `start()` to begin processing its input data.
         streams.start();

@@ -1,4 +1,4 @@
-package com.jiunjiunma.manning.m3.stream;
+package com.jiunjiunma.manning.m3.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;

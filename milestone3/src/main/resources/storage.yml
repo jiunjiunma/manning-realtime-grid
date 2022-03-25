@@ -12,22 +12,17 @@ logging:
   level: INFO
 
 # app specific settings
+source: "dummy"
+metaTopic: "meta-topic"
 metaTable: "device_meta"
+statusTopic: "status"
 statusTable: "device_status"
-
+kafka:
+  bootstrap.servers: "localhost:29092"
+  schema.registry.url: "http://localhost:8090"
+  application.id: "meta-storage-processor"
 database:
   driverClass: org.postgresql.Driver
   user: postgres
   password: secret
   url: "jdbc:postgresql://0.0.0.0:5432/postgres"
-
-# app specific settings
-topic: "raw-topic"
-maxBodySize: 1024
-kafka:
-  bootstrap.servers: "localhost:29092"
-  schema.registry.url: "http://localhost:8090"
-
-s3:
-  bucket: "jiunjiunma.manning.realtime"
-  endpoint: "https://s3.us-east-1.amazonaws.com/"

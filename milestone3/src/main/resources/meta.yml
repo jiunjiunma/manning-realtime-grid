@@ -12,21 +12,14 @@ logging:
   level: INFO
 
 # app specific settings
-metaTable: "device_meta"
-statusTable: "device_status"
-
-database:
-  driverClass: org.postgresql.Driver
-  user: postgres
-  password: secret
-  url: "jdbc:postgresql://0.0.0.0:5432/postgres"
-
-# app specific settings
-topic: "raw-topic"
-maxBodySize: 1024
+source: "raw-topic"
+sink: "meta-topic"
 kafka:
   bootstrap.servers: "localhost:29092"
   schema.registry.url: "http://localhost:8090"
+  default.key.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+  default.value.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+  application.id: "meta-processor"
 
 s3:
   bucket: "jiunjiunma.manning.realtime"

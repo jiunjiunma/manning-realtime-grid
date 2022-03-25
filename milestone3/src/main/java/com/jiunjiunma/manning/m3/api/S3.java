@@ -1,4 +1,4 @@
-package com.jiunjiunma.manning.m3.stream;
+package com.jiunjiunma.manning.m3.api;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
