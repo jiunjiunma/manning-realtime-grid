@@ -42,7 +42,7 @@ public class DeviceStatusEndpoint {
     }
 
     @GET
-    @Path("deviceCount")
+    @Path("numOfDevices")
     public int numberOfConnectedDevices() {
         return metaDAO.numberOfDevices(metaTable);
     }
